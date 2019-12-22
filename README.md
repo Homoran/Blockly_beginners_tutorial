@@ -8,7 +8,17 @@ Dies ist ein JavaScript-Editor mit grafischer Oberfläche, bei der die Befehle p
 zusammengesetzt werden.
 
 Hier sollen zuerst die Wichtigsten Strukturen eines Blockly-Skripts erklärt werden und später 
-anhand von Beispielen auch die wichtigsten Bausteine,
+anhand von Beispielen auch die wichtigsten Bausteine.
+
+Um zu zeigen, dass einfache Steuerungen mit ioBroker kein Hexenwerk sind, zeigt das Tutorial die Erstellung 
+von Skripten mittels Blockly an einem ganz einfachen Beispiel:
+
+![Hier soll das Bild sein](/Media/Licht_an_20_00.jpg "ein einfaches Programm")
+
+Jeden Tag um 20:00 wird das Licht im Schlafzimmer angemacht.
+Dass man aber auch komplexere Abläufe mit Blockly realisieren kann zeigt das Tutorial später, indem dieses 
+Skript später noch schrittweise erweitert wird.
+
 
 # Eine JavaScript-Struktur
 Javascript ist eine ereignisbasierende Programmiersprache. Das bedeutet, dass die Programme immer laufen 
@@ -73,10 +83,7 @@ Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathemati
 
 ---
 
-Das Programm sähe dann so aus:
-![Hier soll das Bild sein](/Media/Licht_an_20_00.jpg "ein einfaches Programm")
-
-Jeden Tag um 20:00 wird das Licht im Schlafzimmer angemacht.
+Damit erhalten wir das oben gezeigte Programm 
 
 ---
 
@@ -88,4 +95,19 @@ jeweils andere Aktion erfolgen.
 Um dies umzusetzen befindet sich in der Block-Sidebar ebenfalls eine Gruppe:
 ![Hier soll das Bild sein](/Media/ioBroker_Blockly_Blocks_Logik.jpg "Die Logikbausteine")
 
+---
 
+In dem ersten Schritt soll das Licht nur um 20:00 angehen, wenn es bereits dunkel ist. Also muss hier eine weitere Abfrage auf die Helligkeit geschehen.
+
+Ein strukturiertes Denken hilft jetzt ungemein, indem die gewünschte Funktionalität formuliert wird:
+*Prüfe um 20:00 ob es bereits dunkel ist und schalte in ddas Licht anSchalte um 20:00 das Licht an 
+falls es dann bereits dunkel ist*
+
+Das Programm triggert also weiter um 20:00; vor dem Schalten der Lampe wird aber die Helligkeit geprüft.
+
+![Hier soll das Bild sein](/Media/Licht_an_20_00_dunkel.jpg "ein einfaches Programm")
+
+Ein wichtiger Logik-Baustein ist der FALLS-Block.
+Hier wird der *Wert von* einem Sensor (hier Lichtsensor:Helligkeit) überprüft, ob er bereits unter einer Schwelle liegt.
+
+Nur dann geht das Licht um 20:00 an.
