@@ -92,6 +92,13 @@ Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathemati
 Damit erhalten wir das oben gezeigte Programm 
 
 ---
+### weitere wichtige Systembausteine
+
+Unter den Systembausteinen befindet sich auch ein wichtiger Block zur Fehlersuche - der debug Block. Mit einem aussagekräftigen
+Eintrag anstelle "test" und einer Positionierung im Blockly an den Stellen an denen etwas passiert, kann man leicht im log 
+sehen, bis wohin das Skript noch läuft, oder nicht.
+
+Ein weiterer Systembaustein ist der Kommentarbaustein, damit es später leichter fällt die Funktion eines Skripts nachzuvollziehen.
 
 ## Logik-Bausteine
 
@@ -183,3 +190,19 @@ In diesem Fall ist der Button in rot beschriftet.
 
 Wie bereits geschrieben muss ein JavaScript immer laufen.
 Dazu startet man das Programm mit dem START-Button in dem Programme Explorer, links neben der Arbeitsfläche
+
+
+---
+
+---
+
+## Hilfe im Forum
+
+bei weitergehenden Fragen und Finetuning der ersten Schritte bietet das Forum gerne Hilfe an.
+Da das Forum aber keine Anlaufstelle für Programmieraufträge, sondern eine Hilfe zur Selbsthilfe sein soll bitte folgende 
+Regeln beachten:
+* Im Unterforum Logik/Skripte - Blockly posten
+* einen aussagekräftigen Threadtitel wählen
+* Das bisherige Werk als Screenshot im Forum hochladen
+* Kurz erklären, was erreicht werden soll
+* kurz erklären wass (nicht) passiert
