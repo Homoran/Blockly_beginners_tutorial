@@ -72,6 +72,6 @@ Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathemati
 ---
 
 Das Programm sähe dann so aus:
-![Hier soll das Bild sein](/Media/Licht_a_20_00.jpg "ein einfaches Programm")
+![Hier soll das Bild sein](/Media/Licht_an_20_00.jpg "ein einfaches Programm")
 
 Jeden Tag um 20:00 wird das Licht im Schlafzimmer angemacht.
