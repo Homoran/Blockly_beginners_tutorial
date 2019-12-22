@@ -146,3 +146,37 @@ Dazu werden die Zeitbausteine benötigt:
 Das Programm sieht dann so aus:
 
 ![Hier soll das Bild sein](/Media/Licht_an_dunkel_20_00.jpg "ein Programm mit Bedingung")
+
+Der Auslöser zur Abarbeitung des Skripts ist diesmal die Änderung der Helligkeit.
+
+Jetzt wird zum einen geprüft ob es bereits nach 20:00 ist, UND zum anderen, ob die Änderung zu einem Wert <500 führt. 
+Die Verwendung des UND Bausteins verlangt jetzt, dass beite Bedingungen wahr werden.
+
+**Hinweis**
+Der UND-Baustein hat standardmäßig nicht die abgebildete Form. Damit ein Blockly übersichtlicher wird, kann man desen (und andere) Baustein zusammenfalten. Dazu klickt man mit der rechten Maustaste den Baustein an un wählt "externe Eingänge"
+
+---
+
+Leider wir jetzt das Licht nur angehen, wenn es nach 20:00 dunkel wird.
+
+Um zu erreichen, dass beide Fälle dazu führen, dass das Licht um oder nach 20:00 angeht wenn es entsprechend dunkel ist muss man einen Trick anwenden, da es keinen kombinierten Trigger gibt und kein Trigger innerhalb eines Triggers sein darf.
+
+Es müssen daher zwei unabhängige Blocklys -so wie sie abgebildet sind- geschrieben werden.
+
+Diese dürfen allerdings auf einer Arbeitsfläche (nebeneinander oder wie hier übereinander) angeordnet werden:
+
+![Hier soll das Bild sein](/Media/Licht_an_Kombi.jpg "Zwei Trigger")
+
+---
+
+## Programm speichern
+
+Bevor man die Arbeitsfläche verlässt muss das Programm über den Button "Speichern", der sich links oben 
+von der Arbeitsfläche befindet, gespeichert werden, wenn es Änderungen am Programm gegegebn hat.
+In diesem Fall ist der Button in rot beschriftet.
+
+
+## Programm starten
+
+Wie bereits geschrieben muss ein JavaScript immer laufen.
+Dazu startet man das Programm mit dem START-Button in dem Programme Explorer, links neben der Areitsfläche
