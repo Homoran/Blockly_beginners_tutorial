@@ -44,8 +44,10 @@ Bitte beachten:
 
 
 ---
+
 Das einfachste Script ( Trigger = Zeitplan -> Lampe an!) würde jetzt auf diesen Trigger reagieren. Dazu würde z.B. 
 einfach ein Datenpunkt eines Schalters über einen weiteren Baustein auf den entsprechenden Wert gesetzt.
+
 ---
 
 ### Systembausteine
