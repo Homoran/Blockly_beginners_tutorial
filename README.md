@@ -68,3 +68,10 @@ darf nur bei der Verwendung von eigenen Datenpunkten verwendet werden. Diese sel
 der Darstellung in vis oder als scriptübergreifende "Systemvariable" als Rechengrundlage o.ä..
 Der zu ändernde Datenpunkt wird über die Object ID ausgewählt und der einzutragende Wert wird in das leere Feld eingetragen.
 Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden
+
+---
+
+Das Programm sähe dann so aus:
+![Hier soll das Bild sein](/Media/Licht_a_20_00.jpg "ein einfaches Programm")
+
+Jeden Tag um 20:00 wird das Licht im Schlafzimmer angemacht.
