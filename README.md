@@ -1,6 +1,7 @@
 # Blockly_beginners_tutorial
 
 # Einleitung
+
 Um Einsteigern in Javascript das grundlegende Verständnis der Strukturen und Befehle zu erleichtern
 bietet sich die Verwendung von Blockly an.
 
@@ -21,6 +22,7 @@ Skript später noch schrittweise erweitert wird.
 
 
 # Eine JavaScript-Struktur
+
 Javascript ist eine ereignisbasierende Programmiersprache. Das bedeutet, dass die Programme immer laufen 
 (also nicht deaktiviert und wieder gestartet werden) und auf einen Auslöser wartet, der dann dafür sorgt, 
 dass das Programm abgearbeitet wird.
@@ -36,6 +38,7 @@ Befehle oder Operationen enthalten:
 
 
 ## Trigger-Bausteine
+
 Um das Skript abzuarbeiten muss ein Ereignis passieren, das im Skript erfasst wird. Dazu bietet Blockly 
 die so genannten Trigger-Bausteine an. Diese befinden sich auf der linken Seite in der Block-Sidebar:
 
@@ -62,6 +65,7 @@ einfach ein Datenpunkt eines Schalters über einen weiteren Baustein auf den ent
 ---
 
 ## Systembausteine
+
 Eine weitere Gruppe an Blöcken in der Block-Sidebar sind die Systembausteine. Mit ihnen werden die wichtigsten 
 Aktionen innerhalb der Datenpunkte von ioBroker umgesetzt.
 
@@ -70,9 +74,10 @@ Aktionen innerhalb der Datenpunkte von ioBroker umgesetzt.
 Hier werden jetzt die Blöcke "steuere..." und "aktualisiere..." zur Änderung von Werten der Datenpunkte in ioBroker verwendet.
 
 ### Der steuere-Block
+
 muss bei der Änderung eines Wertes bei einem Adapter verwendet werden, damit der Adapter darauf reagiert. 
 Der zu ändernde Datenpunkt wird über die Object ID ausgewählt und der einzutragende Wert wird in das leere Feld eingetragen.
-Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden
+Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden.
 
 ### Der aktualisiere-Block
 darf nur bei der Verwendung von eigenen Datenpunkten verwendet werden. Diese selbst angelegten DAtenpunkte dienen z.B. 
@@ -88,11 +93,13 @@ Damit erhalten wir das oben gezeigte Programm
 ---
 
 ## Logik-Bausteine
+
 Ein "richtiges" Programm benötigt oft mehr oder weniger viele Logik-Bausteine um diverse Eventualitäten abzudecken. 
 Entweder sollen diese Möglichkeiten einfach unberücksichtigt bleiben, oder zu jeder Möglichkeit soll eine 
 jeweils andere Aktion erfolgen.
 
 Um dies umzusetzen befindet sich in der Block-Sidebar ebenfalls eine Gruppe:
+
 ![Hier soll das Bild sein](/Media/ioBroker_Blockly_Blocks_Logik.jpg "Die Logikbausteine")
 
 ---
@@ -105,9 +112,37 @@ falls es dann bereits dunkel ist*
 
 Das Programm triggert also weiter um 20:00; vor dem Schalten der Lampe wird aber die Helligkeit geprüft.
 
-![Hier soll das Bild sein](/Media/Licht_an_20_00_dunkel.jpg "ein einfaches Programm")
+![Hier soll das Bild sein](/Media/Licht_an_20_00_dunkel.jpg "ein Programm mit Bedingung")
 
 Ein wichtiger Logik-Baustein ist der FALLS-Block.
 Hier wird der *Wert von* einem Sensor (hier Lichtsensor:Helligkeit) überprüft, ob er bereits unter einer Schwelle liegt.
 
 Nur dann geht das Licht um 20:00 an.
+
+Der Vergleichsbaustein (X = Y) aknn für viele Vergleiche eingesetzt werden. Über den Pulldownpfeil können verschiedene 
+Vergleichsoperatoren ausgewählt werden.
+
+Bei dem anschließend einzugebenden Vergleichswert muss wiederum auf den Typ des zu vergleichenden Datenpunktes geachtet werden.
+Dementsprechend einen einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden.
+
+
+## Datum und Zeitbausteine
+
+Leider wird es mit dem erstellten Programm geschen, dass eines Abends das Licht nicht angeht. 
+Was ist passiert?
+
+Das Programm wird per Zeitplan um 20:00 getriggert und überprüft um exakt 20:00 ob die tatsächliche Helligkeit bereits 
+unter dem eingestellten Wert liegt.
+
+Fällt die Helligkeit erst um 20:01 (oder später) unter diesen Wert, passiert gar nichts.
+
+Also muss das Ganze andersherum angegangen werden:
+*Wenn die Helligkeit unter Wert x fällt, prüfe ob es bereits 20:00 ist*
+
+Dazu werden die Zeitbausteine benötigt:
+
+![Hier soll das Bild sein](/Media/ioBroker_Blockly_Blocks_Trigger.jpg "Die Zeitbausteine")
+
+Das Programm sieht dann so aus:
+
+![Hier soll das Bild sein](/Media/Licht_an_dunkel_20_00.jpg "ein Programm mit Bedingung")
