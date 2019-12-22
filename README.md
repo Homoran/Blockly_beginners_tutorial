@@ -159,7 +159,7 @@ Der UND-Baustein hat standardmäßig nicht die abgebildete Form. Damit ein Block
 
 ---
 
-Leider wir jetzt das Licht nur noch angehen, wenn es nach 20:00 dunkel wird.
+Leider wird jetzt das Licht nur noch angehen, wenn es nach 20:00 dunkel wird.
 
 Um zu erreichen, dass beide Fälle dazu führen, dass das Licht um oder nach 20:00 angeht wenn es entsprechend dunkel ist, 
 muss man einen Trick anwenden, da es keinen kombinierten Trigger gibt und kein Trigger innerhalb eines Triggers sein darf.
