@@ -30,10 +30,12 @@ die so genannten Trigger-Bausteine an. Diese befinden sich auf der linken Seite 
 
 ![Hier soll das Bild sein](/Media/ioBroker_Blockly_Blocks_Trigger.jpg "Die Triggerbausteine")
 
-Mit diesen Bausteinen wird das Eereignis abgefragt, was die Abarbeitung des Programms auslösen soll.
+Mit diesen Bausteinen wird das Ereignis abgefragt, was die Abarbeitung des Programms auslösen soll.
 Für die verschiedenen Möglichkeiten (z.B. Events, Zeitsteuerung) stehen entsprechende Bausteine zur Verfügung.
 
-####**ACHTUNG!**
+Die Bausteine, die nicht die Form einer Klammer haben, verarbeiten weitere Informationen des jeweiligen Triggerbausteins.
+
+#### **ACHTUNG!**
 Bitte beachten:
 * Es darf nur ein Triggerbaustein pro Script verwendet werden.
 * Der Triggerbaustein muss der Baustein sein der am weitesten außen liegt und die übrigen Befehle einschließt (Außer Variablenzuweisungen)
@@ -41,3 +43,22 @@ Bitte beachten:
 **nicht** nach der Auslösung des Triggers.
 
 
+---
+Das einfachste Script ( Trigger = Zeitplan -> Lampe an!) würde jetzt auf diesen Trigger reagieren. Dazu würde z.B. 
+einfach ein Datenpunkt eines Schalters über einen weiteren Baustein auf den entsprechenden Wert gesetzt.
+---
+
+### Systembausteine
+Eine weitere Gruppe an Blöcken in der Block-Sidebar sind die Systembausteine. Mit ihnen werden die wichtigsten 
+Aktionen innerhalb der Datenpunkte von ioBroker umgesetzt.
+
+![Hier soll das Bild sein](/Media/ioBroker_Blockly_Blocks_System.jpg "Die Systembausteine")
+
+Hier werden jetzt die Blöcke "steuere..." und "aktualisiere..." zur Änderung von Werten der Datenpunkte in ioBroker verwendet.
+
+#### Der steuere-Block
+muss bei der Änderung eines Wertes bei einem Adapter verwendet werden, damit der Adapter darauf reagiert. 
+
+#### Der aktualisiere-Block
+darf nur bei der Verwendung von eigenen Datenpunkten verwendet werden. Diese selbst angelegten DAtenpunkte dienen z.B. 
+der Darstellung in vis oder als scriptübergreifende "Systemvariable" als Rechengrundlage o.ä..
