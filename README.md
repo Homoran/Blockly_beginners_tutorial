@@ -198,11 +198,11 @@ Dazu startet man das Programm mit dem START-Button in dem Programme Explorer, li
 
 ## Hilfe im Forum
 
-bei weitergehenden Fragen und Finetuning der ersten Schritte bietet das Forum gerne Hilfe an.
+bei weitergehenden Fragen und Finetuning der ersten Schritte bietet das Forum http://forum.iobroker.net gerne Hilfe an.
 Da das Forum aber keine Anlaufstelle für Programmieraufträge, sondern eine Hilfe zur Selbsthilfe sein soll bitte folgende 
 Regeln beachten:
 * Im Unterforum Logik/Skripte - Blockly posten
 * einen aussagekräftigen Threadtitel wählen
 * Das bisherige Werk als Screenshot im Forum hochladen
 * Kurz erklären, was erreicht werden soll
-* kurz erklären wass (nicht) passiert
+* kurz erklären was (nicht) passiert
