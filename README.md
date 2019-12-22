@@ -8,7 +8,7 @@ bietet sich die Verwendung von Blockly an.
 Dies ist ein JavaScript-Editor mit grafischer Oberfläche, bei der die Befehle per drag & drop
 zusammengesetzt werden.
 
-Hier sollen zuerst die Wichtigsten Strukturen eines Blockly-Skripts erklärt werden und später 
+Hier sollen zuerst die wichtigsten Strukturen eines Blockly-Skripts erklärt werden und später 
 anhand von Beispielen auch die wichtigsten Bausteine.
 
 Um zu zeigen, dass einfache Steuerungen mit ioBroker kein Hexenwerk sind, zeigt das Tutorial die Erstellung 
@@ -17,13 +17,14 @@ von Skripten mittels Blockly an einem ganz einfachen Beispiel:
 ![Hier soll das Bild sein](/Media/Licht_an_20_00.jpg "ein einfaches Programm")
 
 Jeden Tag um 20:00 wird das Licht im Schlafzimmer angemacht.
+
 Dass man aber auch komplexere Abläufe mit Blockly realisieren kann zeigt das Tutorial später, indem dieses 
 Skript später noch schrittweise erweitert wird.
 
 
 # Eine JavaScript-Struktur
 
-Javascript ist eine ereignisbasierende Programmiersprache. Das bedeutet, dass die Programme immer laufen 
+Javascript ist eine ereignisbasierte Programmiersprache. Das bedeutet, dass die Programme immer laufen 
 (also nicht deaktiviert und wieder gestartet werden) und auf einen Auslöser wartet, der dann dafür sorgt, 
 dass das Programm abgearbeitet wird.
 
@@ -52,7 +53,7 @@ Die Bausteine, die nicht die Form einer Klammer haben, verarbeiten weitere Infor
 #### **ACHTUNG!**
 **Bitte beachten:**
 * Es darf nur ein Triggerbaustein pro Script verwendet werden.
-* Der Triggerbaustein muss der Baustein sein der am weitesten außen liegt und die übrigen Befehle einschließt (Außer Variablenzuweisungen)
+* Der Triggerbaustein muss der Baustein sein der am weitesten außen liegt und die übrigen Befehle einschließt (außer Variablenzuweisungen)
 * Alle Bausteine, die sich außerhalb des Triggerbausteins befinden werden nur einmalig zu Skriptstart abgearbeitet und 
 **nicht** nach der Auslösung des Triggers.
 
@@ -107,8 +108,7 @@ Um dies umzusetzen befindet sich in der Block-Sidebar ebenfalls eine Gruppe:
 In dem ersten Schritt soll das Licht nur um 20:00 angehen, wenn es bereits dunkel ist. Also muss hier eine weitere Abfrage auf die Helligkeit geschehen.
 
 Ein strukturiertes Denken hilft jetzt ungemein, indem die gewünschte Funktionalität formuliert wird:
-*Prüfe um 20:00 ob es bereits dunkel ist und schalte in ddas Licht anSchalte um 20:00 das Licht an 
-falls es dann bereits dunkel ist*
+*Schalte um 20:00 das Licht an falls es dann bereits dunkel ist*
 
 Das Programm triggert also weiter um 20:00; vor dem Schalten der Lampe wird aber die Helligkeit geprüft.
 
@@ -119,16 +119,17 @@ Hier wird der *Wert von* einem Sensor (hier Lichtsensor:Helligkeit) überprüft,
 
 Nur dann geht das Licht um 20:00 an.
 
-Der Vergleichsbaustein (X = Y) aknn für viele Vergleiche eingesetzt werden. Über den Pulldownpfeil können verschiedene 
+Der Vergleichsbaustein (X = Y) kann für viele Vergleiche eingesetzt werden. Über den Pulldownpfeil können verschiedene 
 Vergleichsoperatoren ausgewählt werden.
 
 Bei dem anschließend einzugebenden Vergleichswert muss wiederum auf den Typ des zu vergleichenden Datenpunktes geachtet werden.
-Dementsprechend einen einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden.
+Dementsprechend einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden.
 
 
 ## Datum und Zeitbausteine
 
-Leider wird es mit dem erstellten Programm geschen, dass eines Abends das Licht nicht angeht. 
+Leider wird es mit dem erstellten Programm geschehen, dass eines Abends das Licht nicht angeht. 
+
 Was ist passiert?
 
 Das Programm wird per Zeitplan um 20:00 getriggert und überprüft um exakt 20:00 ob die tatsächliche Helligkeit bereits 
@@ -149,17 +150,19 @@ Das Programm sieht dann so aus:
 
 Der Auslöser zur Abarbeitung des Skripts ist diesmal die Änderung der Helligkeit.
 
-Jetzt wird zum einen geprüft ob es bereits nach 20:00 ist, UND zum anderen, ob die Änderung zu einem Wert <500 führt. 
-Die Verwendung des UND Bausteins verlangt jetzt, dass beite Bedingungen wahr werden.
+Jetzt wird bei einer Änderung der Helligkeit zum einen geprüft ob es bereits nach 20:00 ist, UND zum anderen, 
+ob die Änderung zu einem Wert <500 führt. Die Verwendung des UND Bausteins verlangt jetzt, dass beide 
+Bedingungen wahr werden.
 
 **Hinweis**
 Der UND-Baustein hat standardmäßig nicht die abgebildete Form. Damit ein Blockly übersichtlicher wird, kann man desen (und andere) Baustein zusammenfalten. Dazu klickt man mit der rechten Maustaste den Baustein an un wählt "externe Eingänge"
 
 ---
 
-Leider wir jetzt das Licht nur angehen, wenn es nach 20:00 dunkel wird.
+Leider wir jetzt das Licht nur noch angehen, wenn es nach 20:00 dunkel wird.
 
-Um zu erreichen, dass beide Fälle dazu führen, dass das Licht um oder nach 20:00 angeht wenn es entsprechend dunkel ist muss man einen Trick anwenden, da es keinen kombinierten Trigger gibt und kein Trigger innerhalb eines Triggers sein darf.
+Um zu erreichen, dass beide Fälle dazu führen, dass das Licht um oder nach 20:00 angeht wenn es entsprechend dunkel ist, 
+muss man einen Trick anwenden, da es keinen kombinierten Trigger gibt und kein Trigger innerhalb eines Triggers sein darf.
 
 Es müssen daher zwei unabhängige Blocklys -so wie sie abgebildet sind- geschrieben werden.
 
@@ -179,4 +182,4 @@ In diesem Fall ist der Button in rot beschriftet.
 ## Programm starten
 
 Wie bereits geschrieben muss ein JavaScript immer laufen.
-Dazu startet man das Programm mit dem START-Button in dem Programme Explorer, links neben der Areitsfläche
+Dazu startet man das Programm mit dem START-Button in dem Programme Explorer, links neben der Arbeitsfläche
