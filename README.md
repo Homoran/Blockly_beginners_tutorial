@@ -18,8 +18,8 @@ von Skripten mittels Blockly an einem ganz einfachen Beispiel:
 
 Jeden Tag um 20:00 wird das Licht im Schlafzimmer angemacht.
 
-Dass man aber auch komplexere Abläufe mit Blockly realisieren kann zeigt das Tutorial später, indem dieses 
-Skript später noch schrittweise erweitert wird.
+Dass man aber auch komplexere Abläufe mit Blockly realisieren kann zeigt das Tutorial später, wenn dieses 
+Skript noch schrittweise erweitert wird.
 
 
 # Eine JavaScript-Struktur
