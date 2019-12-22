@@ -60,7 +60,11 @@ Hier werden jetzt die Blöcke "steuere..." und "aktualisiere..." zur Änderung v
 
 #### Der steuere-Block
 muss bei der Änderung eines Wertes bei einem Adapter verwendet werden, damit der Adapter darauf reagiert. 
+Der zu ändernde Datenpunkt wird über die Object ID ausgewählt und der einzutragende Wert wird in das leere Feld eingetragen.
+Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden
 
 #### Der aktualisiere-Block
 darf nur bei der Verwendung von eigenen Datenpunkten verwendet werden. Diese selbst angelegten DAtenpunkte dienen z.B. 
 der Darstellung in vis oder als scriptübergreifende "Systemvariable" als Rechengrundlage o.ä..
+Der zu ändernde Datenpunkt wird über die Object ID ausgewählt und der einzutragende Wert wird in das leere Feld eingetragen.
+Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden
