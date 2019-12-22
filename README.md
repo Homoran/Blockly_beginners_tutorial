@@ -1,6 +1,6 @@
 # Blockly_beginners_tutorial
 
-## Einleitung
+# Einleitung
 Um Einsteigern in Javascript das grundlegende Verständnis der Strukturen und Befehle zu erleichtern
 bietet sich die Verwendung von Blockly an.
 
@@ -10,10 +10,11 @@ zusammengesetzt werden.
 Hier sollen zuerst die Wichtigsten Strukturen eines Blockly-Skripts erklärt werden und später 
 anhand von Beispielen auch die wichtigsten Bausteine,
 
-## Eine JavaScript-Struktur
+# Eine JavaScript-Struktur
 Javascript ist eine ereignisbasierende Programmiersprache. Das bedeutet, dass die Programme immer laufen 
 (also nicht deaktiviert und wieder gestartet werden) und auf einen Auslöser wartet, der dann dafür sorgt, 
 dass das Programm abgearbeitet wird.
+
 Anschließend kann über viele verschiedenen Routinen zum einen die Bedingungen für eine Abarbeitung, 
 zum anderen die durchzuführende Aktion programmiert werden.
 
@@ -24,7 +25,7 @@ Befehle oder Operationen enthalten:
 
 
 
-### Der Trigger-Baustein
+## Trigger-Bausteine
 Um das Skript abzuarbeiten muss ein Ereignis passieren, das im Skript erfasst wird. Dazu bietet Blockly 
 die so genannten Trigger-Bausteine an. Diese befinden sich auf der linken Seite in der Block-Sidebar:
 
@@ -36,7 +37,7 @@ Für die verschiedenen Möglichkeiten (z.B. Events, Zeitsteuerung) stehen entspr
 Die Bausteine, die nicht die Form einer Klammer haben, verarbeiten weitere Informationen des jeweiligen Triggerbausteins.
 
 #### **ACHTUNG!**
-Bitte beachten:
+**Bitte beachten:**
 * Es darf nur ein Triggerbaustein pro Script verwendet werden.
 * Der Triggerbaustein muss der Baustein sein der am weitesten außen liegt und die übrigen Befehle einschließt (Außer Variablenzuweisungen)
 * Alle Bausteine, die sich außerhalb des Triggerbausteins befinden werden nur einmalig zu Skriptstart abgearbeitet und 
@@ -50,7 +51,7 @@ einfach ein Datenpunkt eines Schalters über einen weiteren Baustein auf den ent
 
 ---
 
-### Systembausteine
+## Systembausteine
 Eine weitere Gruppe an Blöcken in der Block-Sidebar sind die Systembausteine. Mit ihnen werden die wichtigsten 
 Aktionen innerhalb der Datenpunkte von ioBroker umgesetzt.
 
@@ -58,14 +59,15 @@ Aktionen innerhalb der Datenpunkte von ioBroker umgesetzt.
 
 Hier werden jetzt die Blöcke "steuere..." und "aktualisiere..." zur Änderung von Werten der Datenpunkte in ioBroker verwendet.
 
-#### Der steuere-Block
+### Der steuere-Block
 muss bei der Änderung eines Wertes bei einem Adapter verwendet werden, damit der Adapter darauf reagiert. 
 Der zu ändernde Datenpunkt wird über die Object ID ausgewählt und der einzutragende Wert wird in das leere Feld eingetragen.
 Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden
 
-#### Der aktualisiere-Block
+### Der aktualisiere-Block
 darf nur bei der Verwendung von eigenen Datenpunkten verwendet werden. Diese selbst angelegten DAtenpunkte dienen z.B. 
 der Darstellung in vis oder als scriptübergreifende "Systemvariable" als Rechengrundlage o.ä..
+
 Der zu ändernde Datenpunkt wird über die Object ID ausgewählt und der einzutragende Wert wird in das leere Feld eingetragen.
 Hierbei bitte den Typ des Datenpunktes beachten und einen Text-, einen Mathematik- oder einen Logik-Baustein verwenden
 
@@ -75,3 +77,15 @@ Das Programm sähe dann so aus:
 ![Hier soll das Bild sein](/Media/Licht_an_20_00.jpg "ein einfaches Programm")
 
 Jeden Tag um 20:00 wird das Licht im Schlafzimmer angemacht.
+
+---
+
+## Logik-Bausteine
+Ein "richtiges" Programm benötigt oft mehr oder weniger viele Logik-Bausteine um diverse Eventualitäten abzudecken. 
+Entweder sollen diese Möglichkeiten einfach unberücksichtigt bleiben, oder zu jeder Möglichkeit soll eine 
+jeweils andere Aktion erfolgen.
+
+Um dies umzusetzen befindet sich in der Block-Sidebar ebenfalls eine Gruppe:
+![Hier soll das Bild sein](/Media/ioBroker_Blockly_Blocks_Logik.jpg "Die Logikbausteine")
+
+
